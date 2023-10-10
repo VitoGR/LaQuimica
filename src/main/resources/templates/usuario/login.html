@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/layout/layout::head}"></head>
+
+<body>
+
+
+	<header th:replace="~{/layout/layout::header}"></header>
+
+
+	<!--Container principal-->
+	<div class="container py-4">
+
+
+		<!--Card principal-->
+		<div class="card bg-light">
+
+			<!--Card header y titulo-->
+			<div class="card-header">
+				<h2>Bienvenido a La Química!</h2>
+			</div>
+
+
+			<!--Card body-->
+			<div class="card-body">
+
+
+
+				<form th:action="@{/usuario/login}" method="post">
+					<div class="form-group">
+						<label for="nombre"> Email: </label>
+						<input type="text" class="form-control" id="username" name="username"
+							placeholder="Ingrese su email" required autocomplete="off">
+
+					</div>
+
+					<div class="form-group">
+						<label for="pwd"> Contraseña:</label>
+						<input type="password" class="form-control" id="password" name="password"
+							placeholder="Ingrese su contraseña" required>
+					</div>
+
+					<div class="form-group my-4">
+						<div class="col-sm-2">
+							<button type="submit" class="btn btn-dark"> <span class="glyphicon glyphicon-ok"></span>
+								Ingresar</button>
+						</div>
+					</div>
+				</form>
+				<a th:href="@{/usuario/registro}" class="card-link">¿Aún no tiene cuenta?. ¡Aqui puede registrarse!</a>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="~{/layout/layout::footer}"></footer>
+</body>
+
+</html>
