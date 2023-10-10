@@ -98,9 +98,9 @@ public class HomeController {
 
 		producto = optionalProducto.get();
 
+		detalleOrden.setNombre(producto.getDescripcion());
 		detalleOrden.setCantidad(cantidad);
 		detalleOrden.setPrecio(producto.getPrecio());
-		detalleOrden.setNombre(producto.getNombre());
 		detalleOrden.setTotal(producto.getPrecio() * cantidad);
 		detalleOrden.setProducto(producto);
 
@@ -193,7 +193,7 @@ public class HomeController {
 		logger.info("Nombre del prd: {}", nombre);
 		
 		List<Producto> productos = productoService.findAll().stream().filter(
-				p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
+				p -> p.getDescripcion().contains(nombre)).collect(Collectors.toList());
 		
 		model.addAttribute("productos",productos);
 		return "usuario/home";

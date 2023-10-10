@@ -16,7 +16,7 @@
 
 		<!-- Page Heading/Breadcrumbs -->
 		<h1 class="mt-4 mb-3">
-			Spring eCommerce <small>Productos</small>
+			La Química! <small>Productos</small>
 		</h1>
 
 		<ol class="breadcrumb">
@@ -29,7 +29,6 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">Nombre</th>
 					<th scope="col">Descripción</th>
 					<th scope="col">Inventario</th>
 					<th scope="col">Precio</th>
@@ -39,7 +38,6 @@
 			</thead>
 			<tbody>
 				<tr th:each="producto:${productos}">
-					<td th:text="${producto.nombre}"></td>
 					<td th:text="${producto.descripcion}"></td>
 					<td th:text="${producto.cantidad}"></td>
 					<td th:text="${producto.precio}"></td>

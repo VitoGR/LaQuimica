@@ -11,7 +11,7 @@
 
 		<!-- Page Heading/Breadcrumbs -->
 		<h1 class="mt-4 mb-3">
-			Spring eCommerce <small>Productos</small>
+			La Química! <small>Productos</small>
 		</h1>
 
 		<ol class="breadcrumb">
@@ -23,13 +23,33 @@
 		<h2>Crear Producto</h2>
 		<form class="form-horizontal" th:object="${productos}" th:action="@{/productos/save}" method="post"
 			enctype="multipart/form-data">
+
+			<!-- -->
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="nombre">Nombre:</label>
-				<div class="col-sm-10">
-					<input type="text" th:field="*{nombre}" class="form-control" id="nombre" name="nombre"
-						placeholder="Ingrese el nombre del producto" autocomplete="off" required>
+				<label class="control-label col-sm-2" for="marca">Marca:</label>
+				<div class="col-sm-10" id="marca">
+					<select required th:field="*{marca}" class="form-control" id="marca">
+						 <option value="">seleccione la marca</option>
+						<option th:each="marca: ${marcas}" th:value="${marca.id}" th:text="${marca.nombre}">
+						</option>
+					</select>
 				</div>
 			</div>
+
+			<!-- -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="categoria">Categoria:</label>
+				<div class="col-sm-10" id="categoria">
+					<select required th:field="*{categoria}" class="form-control" id="categoria">
+						 <option value="">seleccione la categoría</option>
+						<option th:each="categoria: ${categorias}" th:value="${categoria.id}"
+							th:text="${categoria.nombre}">
+						</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- -->
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="descripcion">Descripción:</label>
 				<div class="col-sm-10">
@@ -38,6 +58,7 @@
 				</div>
 			</div>
 
+			<!-- -->
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="cantidad">Cantidad:</label>
 				<div class="col-sm-10">
@@ -46,6 +67,7 @@
 				</div>
 			</div>
 
+			<!-- -->
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="precio">Precio:</label>
 				<div class="col-sm-10">
@@ -54,41 +76,15 @@
 				</div>
 			</div>
 
-
-
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="categoria">Categoria:</label>
-				<div class="col-sm-10" id="categoria">
-					<select th:field="*{categoria}" class="form-control" id="categoria">
-						
-						<option th:each="categoria: ${categorias}" th:value="${categoria.id}"
-							th:text="${categoria.nombre}">
-						</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="marca">Marca:</label>
-				<div class="col-sm-10" id="marca">
-					
-					<select th:field="*{marca}" class="form-control" id="marca">
-						
-						<option th:each="marca: ${marcas}" th:value="${marca.id}" th:text="${marca.nombre}">
-						</option>
-
-					</select>
-				</div>
-			</div>
-
-
-			<div class="form-group">
+			<!-- -->
+			<div class="form-group py-3">
 				<label class="control-label col-sm-2" for="img">Imagen:</label>
 				<div class="col-sm-10">
 					<input type="file" class="form-control-file" id="img" name="img">
 				</div>
 			</div>
 
+			<!-- -->
 			<div class="row">
 				<div class="col-sm-2">
 					<button type="submit" class="btn btn-success">
@@ -96,11 +92,11 @@
 					</button>
 				</div>
 			</div>
-
 		</form>
 
+		<!-- -->
 	</div>
-	<!-- /.container -->
+
 
 	<footer th:replace="~{/layout/layout::footer}"></footer>
 </body>

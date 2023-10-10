@@ -14,7 +14,7 @@
 
 		<!-- Page Heading/Breadcrumbs -->
 		<h1 class="mt-4 mb-3">
-			Spring eCommerce <small>Detalles</small>
+			La Química! <small>Detalles</small>
 		</h1>
 
 		<ol class="breadcrumb">
@@ -40,7 +40,7 @@
 							<tbody>
 								<tr th:each="detalle:${detalles}">
 									<td th:text="${detalle.cantidad}"></td>
-									<td th:text="${detalle.nombre}"></td>
+									<td th:text="${detalle.descripcion}"></td>
 									<td th:text="${detalle.precio}"></td>
 									<td th:text="${detalle.total}"></td>
 								</tr>

@@ -1,6 +1,5 @@
 package com.vito.quimica.model;
 
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +15,6 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String nombre;
 	private String descripcion;
 	private String imagen;
 	private Double precio;
@@ -39,7 +37,6 @@ public class Producto {
 			Usuario usuario) {
 		super();
 		this.id = id;
-		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.precio = precio;
@@ -55,13 +52,6 @@ public class Producto {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
 	public String getDescripcion() {
 		return descripcion;
@@ -121,7 +111,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen
+		return "Producto [id=" + id + ", descripcion=" + descripcion + ", imagen=" + imagen
 				+ ", precio=" + precio + ", cantidad=" + cantidad + "]";
 	}
 
